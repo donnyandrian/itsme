@@ -4,7 +4,7 @@ body {
     background-color: hsla(0, 0%, 13%, 100%);
     color: hsl(0, 0%, 90%);
     font-weight: 400;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 u {
@@ -13,9 +13,9 @@ u {
 
 #banner_box {
     padding: 15% 10% 15% 10%;
-    background-image: url("https://raw.githubusercontent.com/donnyandrian/itsme/main/banner_image.png");
     background-size: cover;
     background-repeat: no-repeat;
+    opacity: 0;
 }
 
 #content_area {
@@ -25,6 +25,51 @@ u {
     margin-top: -70px;
     padding: 7.5% 10% 5% 10%;
     background: linear-gradient(180deg, hsla(0, 0%, 13%, 0%) 0%, hsla(0, 0%, 13%, 100%) 70px);
+    opacity: 0;
+}
+
+#apps_flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+#apps_flex > div > p {
+    font-size: 16px;
+    max-width: 100px;
+}
+
+.apps_item {
+    background-color: hsla(0, 0%, 100%, 10%);
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    border-radius: 15px;
+    transition: 150ms ease-in;
+}
+
+.apps_item:hover {
+    background-color: hsla(0, 0%, 100%, 15%);
+}
+
+.apps_item:active {
+    background-color: hsla(0, 0%, 100%, 8%);
+}
+
+.apps_item > a {
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+}
+
+.apps_item > a > img {
+    width: 60px;
+    height: 60px;
+    margin: 20px;
+    object-fit: contain;
+    align: middle;
 }
 
 #banner_title {
@@ -33,4 +78,13 @@ u {
     text-shadow: 1.5px 1.5px 6px hsl(0, 0%, 25%);
     font-size: 42px;
     font-weight: 600;
+}
+
+@keyframes boxload {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

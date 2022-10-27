@@ -10,11 +10,115 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <script>
+        function load(src) {
+            return new Promise((resolve, reject) => {
+                const image = new Image();
+                image.addEventListener('load', resolve);
+                image.addEventListener('error', reject);
+                image.src = src;
+            });
+        }
+
+        function setOODLink() {
+            let elem = document.getElementById('oodlink');
+
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = today.getMonth() + 1;
+            const day = today.getDate();
+
+            const contructed = 'https://santapanrohani.org/ID/' + `${year}/${month}/${day}/`;
+            elem.setAttribute('href', contructed);
+        }
+
+        const image = 'https://raw.githubusercontent.com/donnyandrian/itsme/main/banner_image.png';
+        load(image).then(() => {
+            let box = document.getElementById("banner_box");
+            
+            box.style.backgroundImage = `url(${image})`;
+            box.style.animation = "boxload 1.75s ease-out";
+            box.style.animationFillMode = "forwards";
+
+            let content = document.getElementById("content_area");
+            content.style.animation = "boxload 1s ease-out 1.5s";
+            content.style.animationFillMode = "forwards";
+
+            setOODLink();
+        });
+    </script>
+
     <div id="banner_box">
         <h1 id="banner_title">Welcome Back, <u>Donny Andrian!</u></h1>
     </div>
     <div id="content_area">
-        <p>Start your day with any of these apps!</p>
+        <p style="font-weight:500;">Start your day with any of these <u>apps!</u></p>
+        <div id="apps_flex">
+            <div>
+                <div class="apps_item">
+                    <a href="https://www.office.com/apps?auth=2&home=1">
+                        <img src="https://res.cdn.office.net/officehub/officestartresources/image-2.svg" />
+                    </a>
+                </div>
+                <p>Office</p>
+            </div>
+            <div>
+                <div class="apps_item">
+                    <a href="https://teams.microsoft.com/_?culture=id-id&country=ID&lm=deeplink&lmsrc=homePageWeb&cmpid=WebSignIn#/school/teams-grid/General?ctx=teamsGrid">
+                        <img src="data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtvcGFjaXR5OjAuMTt9LmNscy0ye2ZpbGw6bm9uZTt9LmNscy0ze2ZpbGw6IzUwNTljOTt9LmNscy00e2ZpbGw6IzdiODNlYjt9LmNscy01e29wYWNpdHk6MC41O30uY2xzLTZ7ZmlsbDojNGI1M2JjO30uY2xzLTd7ZmlsbDojZmZmO308L3N0eWxlPjwvZGVmcz48dGl0bGU+VGVhbXNfMjR4PC90aXRsZT48ZyBpZD0iVGVhbXMiPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTgsMTAuMTJWMTcuNUE1LjQsNS40LDAsMCwwLDguNjEsMjBoNUExLjUsMS41LDAsMCwwLDE1LDE4LjY1VjlsLS4yOCwwSDkuMTJBMS4xMiwxLjEyLDAsMCwwLDgsMTAuMTJaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTMuODMsNmgtM0EzLjI5LDMuMjksMCwwLDAsMTQsOC4zMWEzLjMzLDMuMzMsMCwwLDAsMS0uMTd2LTFBMS4xOCwxLjE4LDAsMCwwLDEzLjgzLDZaIi8+PHJlY3QgY2xhc3M9ImNscy0yIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik0yMi44Nyw5aC01bC0xLjM5LDEuMTN2NS41OWEzLjc2LDMuNzYsMCwwLDAsNy41MSwwVjEwLjEzQTEuMTIsMS4xMiwwLDAsMCwyMi44Nyw5WiIvPjxjaXJjbGUgaWQ9IkhlYWQiIGNsYXNzPSJjbHMtMyIgY3g9IjIwLjUiIGN5PSI1LjUiIHI9IjIuNSIvPjxwYXRoIGNsYXNzPSJjbHMtNCIgZD0iTTkuMTIsOWg4Ljc2QTEuMTIsMS4xMiwwLDAsMSwxOSwxMC4xMlYxNy41QTUuNSw1LjUsMCwwLDEsMTMuNSwyM2gwQTUuNSw1LjUsMCwwLDEsOCwxNy41VjEwLjEyQTEuMTIsMS4xMiwwLDAsMSw5LjEyLDlaIi8+PGNpcmNsZSBpZD0iSGVhZC0yIiBkYXRhLW5hbWU9IkhlYWQiIGNsYXNzPSJjbHMtNCIgY3g9IjE0IiBjeT0iNSIgcj0iMy4zMSIvPjxwYXRoIGNsYXNzPSJjbHMtNSIgZD0iTTgsMTAuMTJWMTcuNUE1LjQsNS40LDAsMCwwLDguNjEsMjBoNUExLjUsMS41LDAsMCwwLDE1LDE4LjY1VjlsLS4yOCwwSDkuMTJBMS4xMiwxLjEyLDAsMCwwLDgsMTAuMTJaIi8+PHBhdGggY2xhc3M9ImNscy01IiBkPSJNMTMuODMsNmgtM0EzLjI5LDMuMjksMCwwLDAsMTQsOC4zMWEzLjMzLDMuMzMsMCwwLDAsMS0uMTd2LTFBMS4xOCwxLjE4LDAsMCwwLDEzLjgzLDZaIi8+PHJlY3QgaWQ9IkJhY2tfUGxhdGUiIGRhdGEtbmFtZT0iQmFjayBQbGF0ZSIgY2xhc3M9ImNscy02IiB5PSI1IiB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHJ4PSIxLjE3Ii8+PHBhdGggY2xhc3M9ImNscy03IiBkPSJNMTAuMTgsOS41OEg3Ljc5VjE2SDYuMjJWOS41OEgzLjgyVjhoNi4zNloiLz48L2c+PC9zdmc+" />
+                    </a>
+                </div>
+                <p>Microsoft Teams</p>
+            </div>
+            <div>
+                <div class="apps_item">
+                    <a href="https://www.youtube.com/">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" />
+                    </a>
+                </div>
+                <p>Youtube</p>
+            </div>
+            <div>
+                <div class="apps_item">
+                    <a id="oodlink" href="https://santapanrohani.org/">
+                        <img src="https://pbs.twimg.com/profile_images/555714146012909569/ggc6N8XE.png" />
+                    </a>
+                </div>
+                <p>Our Daily Bread</p>
+            </div>
+            <div>
+                <div class="apps_item">
+                    <a href="https://canva.com/">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg" />
+                    </a>
+                </div>
+                <p>Canva</p>
+            </div>
+            <div>
+                <div class="apps_item">
+                    <a href="https://quizizz.com/join">
+                        <img src="https://i.pinimg.com/originals/98/01/80/980180fd83341e63a496a4f98d2bd115.png" />
+                    </a>
+                </div>
+                <p>Quizizz</p>
+            </div>
+            <div>
+                <div class="apps_item">
+                    <a href="https://translate.google.com/?sl=id&tl=en&op=translate">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Google_Translate_logo.svg" />
+                    </a>
+                </div>
+                <p>Google Translate</p>
+            </div>
+            <div>
+                <div class="apps_item">
+                    <a href="https://discord.com/channels/@me">
+                        <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/62595384e89d1d54d704ece7_3437c10597c1526c3dbd98c737c2bcae.svg" />
+                    </a>
+                </div>
+                <p>Discord</p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
