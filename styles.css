@@ -1,4 +1,36 @@
 body {
     text-align: center;
     font-family: 'Poppins', sans-serif;
+    background-color: hsla(0, 0%, 13%, 100%);
+    color: hsl(0, 0%, 90%);
+    font-weight: 400;
+    font-size: 18px;
+}
+
+u {
+    white-space: nowrap;
+}
+
+#banner_box {
+    padding: 15% 10% 15% 10%;
+    background-image: url("https://raw.githubusercontent.com/donnyandrian/itsme/main/banner_image.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#content_area {
+    z-index: 9;
+    display: flex;
+    flex-direction: column;
+    margin-top: -70px;
+    padding: 7.5% 10% 5% 10%;
+    background: linear-gradient(180deg, hsla(0, 0%, 13%, 0%) 0%, hsla(0, 0%, 13%, 100%) 70px);
+}
+
+#banner_title {
+    margin-bottom: 70px;
+    color: hsl(0, 0%, 100%);
+    text-shadow: 1.5px 1.5px 6px hsl(0, 0%, 25%);
+    font-size: 42px;
+    font-weight: 600;
 }
