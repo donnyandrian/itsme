@@ -20,6 +20,12 @@
             });
         }
 
+        function pad(n, width, z) {
+            z = z || '0';
+            n = n + '';
+            return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+        }
+
         function setOODLink() {
             let elem = document.getElementById('oodlink');
 
@@ -28,7 +34,7 @@
             const month = today.getMonth() + 1;
             const day = today.getDate();
 
-            const contructed = 'https://santapanrohani.org/ID/' + `${year}/${month}/${day}/`;
+            const contructed = 'https://santapanrohani.org/ID/' + `${year}/${pad(month, 2)}/${pad(day, 2)}/`;
             elem.setAttribute('href', contructed);
         }
 
