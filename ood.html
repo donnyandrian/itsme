@@ -5,6 +5,12 @@
 </head>
 <body>
     <script>
+        function pad(n, width, z) {
+            z = z || '0';
+            n = n + '';
+            return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+        }
+
         const today = new Date();
         const year = today.getFullYear();
         const month = today.getMonth() + 1;
