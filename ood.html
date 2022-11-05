@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>You are redirecting</title>
+</head>
+<body>
+    <script>
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = today.getMonth() + 1;
+        const day = today.getDate();
+
+        const contructed = 'https://santapanrohani.org/ID/' + `${year}/${pad(month, 2)}/${pad(day, 2)}/`;
+
+        window.location = contructed;
+    </script>
+</body>
+</html>
